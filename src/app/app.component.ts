@@ -1,15 +1,16 @@
-import {Component} from '@angular/core';
-import {AsyncPipe, JsonPipe} from '@angular/common';
+import { Component } from '@angular/core';
+import { AsyncPipe, JsonPipe } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [AsyncPipe, JsonPipe],
-  template: `
-    <h1>Hello from {{ name }}!</h1>
-  `,
+  imports: [RouterModule, AsyncPipe, JsonPipe],
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
-  name = 'Angular';
 
+  constructor() {
+    localStorage.clear();
+  }
 }

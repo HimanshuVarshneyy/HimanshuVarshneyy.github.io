@@ -1,0 +1,20 @@
+<h1>Step 2: Choose config and options</h1>
+<div *ngIf="carOption">
+    <label>Config</label>
+    <select id="configSelect" name="config" [(ngModel)]="selectedConfig"
+        (change)="enableNextStep()">
+        <option *ngFor="let config of carOption.configs" [ngValue]="config">{{config.description}}</option>
+    </select>
+</div>
+
+<ng-container *ngIf="carOption && selectedConfig">
+    <p>Range: {{this.selectedConfig.range}} miles - Max speed : {{this.selectedConfig.speed}} - Price :
+        {{this.selectedConfig.price | currency: 'USD'}}</p>
+
+    <label for="tow-hitch">Tow hitch</label>
+    <input id="includeTow" type="checkbox" name="tow-hitch" [(ngModel)]="carOption.towHitch"
+        (change)="enableNextStep()">
+
+    <label for="yoke">Yoke</label>
+    <input id="includeYoke" type="checkbox" name="yoke" [(ngModel)]="carOption.yoke" (change)="enableNextStep()">
+</ng-container>

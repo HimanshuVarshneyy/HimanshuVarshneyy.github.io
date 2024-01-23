@@ -1,0 +1,29 @@
+<h1>Step 3: Summary</h1>
+<h3>Your Tesla {{selectedCarModel.description}}</h3>
+<span class="space-left space-between">
+    <span class="bold-text">{{selectedCarConfig.description}}</span>
+    <span>{{selectedCarConfig.price | currency: 'USD'}}</span>
+</span>
+<span class="space-left">Range : {{selectedCarConfig.range}} miles - Max speed : {{selectedCarConfig.speed}}</span>
+<span class="space-left space-between">
+    <span class="bold-text">{{selectedCarColor.description}}</span>
+    <span>{{selectedCarColor.price | currency: 'USD'}}</span>
+</span>
+<span *ngIf="selectedCarOption.towHitch">
+    <span class="space-left space-between">
+        <span class="bold-text">Tow Hitch Package</span>
+        <span>{{thousand | currency: 'USD'}}</span>
+    </span>
+</span>
+<span *ngIf="selectedCarOption.yoke">
+    <span class="space-left space-between">
+        <span class="bold-text">Yoke Package</span>
+        <span>{{thousand | currency: 'USD'}}</span>
+    </span>
+</span>
+<hr>
+<span class="space-left space-between">
+    <span class="bold-text">TOTAL COST</span>
+    <span>{{totalCost | currency: 'USD'}}</span>
+</span>
+<hr>
