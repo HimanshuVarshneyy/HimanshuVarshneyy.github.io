@@ -36,6 +36,10 @@ export class StepOneComponent implements OnInit {
     localStorage.clear();
   }
 
+  compareOption(c1: {code: string}, c2: {code: string}) {
+    return c1 && c2 && c1.code === c2.code;
+  }
+
   private setSelectedCarModelAndColor() {
     this.selectedCarModel = JSON.parse(localStorage.getItem('model') as string) as CarModel || undefined;
     this.selectedCarColor = JSON.parse(localStorage.getItem('color') as string) as CarColor || undefined;

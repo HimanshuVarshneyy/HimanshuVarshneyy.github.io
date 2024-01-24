@@ -2,7 +2,7 @@
 <div *ngIf="carOption">
     <label>Config</label>
     <select id="configSelect" name="config" [(ngModel)]="selectedConfig"
-        (change)="enableNextStep()">
+        (change)="enableNextStep()" [compareWith]="compareOption">
         <option *ngFor="let config of carOption.configs" [ngValue]="config">{{config.description}}</option>
     </select>
 </div>

@@ -33,4 +33,8 @@ export class StepTwoComponent implements OnInit {
     localStorage.setItem("config", JSON.stringify(this.selectedConfig));
     localStorage.setItem("option", JSON.stringify(this.carOption));
   }
+
+  compareOption(c1: {code: string}, c2: {code: string}) {
+    return c1 && c2 && c1.code === c2.code;
+  }
 }
